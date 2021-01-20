@@ -7,6 +7,11 @@
                      btn-bloc" role="button" aria-pressed="true">Home</a>
     
     <div class="tabla-usuarios">
+        @if(Session::has('delete_Good'))
+            <div class="alert alert-success" role="alert">
+            {{Session::get('delete_Good')}}
+            </div>
+        @endif 
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -28,7 +33,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="{{url('verUsuario/'.$usuario->id)}}"><button type="button" class="btn btn-success">Ver</button></a>
                     <a href="{{url('editUsuario/'.$usuario->id)}}"><button type="button" class="btn btn-warning">Editar</button></a>
-                    <a href=""><button type="button" class="btn btn-danger">Eliminar</button></a> 
+                    <a href="{{url('delUsuario/'.$usuario->id)}}"><button type="button" class="btn btn-danger">Eliminar</button></a> 
                 </div> 
                 </td>
                 </tr>

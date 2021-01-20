@@ -38,5 +38,13 @@ class usersController extends Controller
         return back()->with('update_Good','Los datos fueron actualizados correctamente');
     }
 
+    //eliminar usuario
+    public function eliminarUsuario($id){
+        $usuarios = User::find($id);
+
+        $usuarios->delete();
+        return back()->with('delete_Good','El usuario fue eliminado correctamente');
+    }
+
 
 }

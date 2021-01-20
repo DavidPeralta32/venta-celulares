@@ -30,13 +30,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Ver productos
 Route::get('/productos',[App\Http\Controllers\ProductosController::class,'productos'])->name('productos');
-
 //Detaller del producto
 Route::get('/detalle/{id}',[ProductosController::class,'detalleProducto']);
 
 //vista carrito
 Route::get('/carrito',[ProductosController::class,'carrito']);
-
 //ruta para agregar producto al carrito
 Route::get('/addcarrito/{id}',[ProductosController::class,'agregarCarrito']);
 
@@ -47,3 +45,5 @@ Route::get('/verUsuario/{id}',[usersController::class,'usuario']);
 //editar usuario
 Route::get('/editUsuario/{id}',[usersController::class,'editUsuario']);
 Route::post('/actualizaUsuario',[usersController::class,'actualizaUsuario'])->name('actualiza');
+//Eliminar usuario
+Route::get('/delUsuario/{id}',[usersController::class,'eliminarUsuario']);
