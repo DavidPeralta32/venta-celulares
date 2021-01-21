@@ -28,10 +28,19 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Ver productos
+//Ver productos en venta
 Route::get('/productos',[App\Http\Controllers\ProductosController::class,'productos'])->name('productos');
 //Detaller del producto
 Route::get('/detalle/{id}',[ProductosController::class,'detalleProducto']);
+//crud productos
+Route::get('/listProducto',[ProductosController::class,'showProductos']);
+//crear producto
+Route::get('/crearProducto',[ProductosController::class,'crearProducto']);
+//insertar producto
+Route::post('/insertarProducto',[ProductosController::class,'insertarProducto'])->name('insertar.producto');
+//ver producto seleccionado
+Route::get('/verProducto/{id}',[ProductosController::class,'verProducto']);
+
 
 //vista carrito
 Route::get('/carrito',[ProductosController::class,'carrito']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
@@ -57,6 +58,48 @@ class ProductosController extends Controller
             session()->put('carrito',$carrito);
             return redirect()->back()->with('success','Producto agregado al carrito');
 
+    }
+
+    //crud productos
+
+    public function showProductos(){
+        $productos = Productos::All();
+        return view('listProducto', compact('productos'));
+    }
+
+    public function crearProducto(){
+        return view('crearProducto');
+    }
+
+    public function insertarProducto(Request $req){
+        //    $validacion = $req->validate([
+        //        'nombre'=> ['required'],
+        //        'descripcion'=>['required'],
+        //        'foto'=>['required','image'],
+        //        'precio'=>['required','numeric'],
+        //        'stock'=>['required','numeric'],
+        //    ]);
+
+        $imagen = $req->file('file')->store('public/celulares');
+        $url = Storage::url($imagen);
+        
+         $productos = new Productos;
+
+          $productos->nombre = $req->nombre;
+          $productos->descripcion = $req->descripcion;
+          $productos->foto = $url;
+          $productos->precio = $req->precio;
+          $productos->stock = $req->stock;
+
+          $productos->save();
+
+         return back()->with('insert_Good','El producto fue agregado correctamente');
+    }
+
+    public function verProducto($id){
+            $producto = Productos::find($id);
+            return view('verProducto', compact('producto'));
+        
     }
 
 

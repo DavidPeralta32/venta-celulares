@@ -8,6 +8,9 @@
     
     <a href="{{url('usuarios/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Usuarios</a>
+    
+    <a href="{{url('listProducto/')}}" class="btn btn-primary btn-lg
+                     btn-bloc" role="button" aria-pressed="true">Editar Productos</a>
 </div>
 @endsection
 
