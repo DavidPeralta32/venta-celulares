@@ -40,6 +40,12 @@ Route::get('/crearProducto',[ProductosController::class,'crearProducto']);
 Route::post('/insertarProducto',[ProductosController::class,'insertarProducto'])->name('insertar.producto');
 //ver producto seleccionado
 Route::get('/verProducto/{id}',[ProductosController::class,'verProducto']);
+//vista para editar producto
+Route::get('/editarProducto/{id}',[ProductosController::class,'editarProducto']);
+//actualizar el producto
+Route::post('/actualizarProducto',[ProductosController::class,'actualizarProducto'])->name('actualizar.producto');
+//eliminar producto
+Route::get('/eliminarProducto/{id}',[ProductosController::class,'eliminarProducto']);
 
 
 //vista carrito

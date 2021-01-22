@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
+
+
     <h1>Producto {{$producto->nombre}}</h1>
     
     <a href="{{url('listProducto/')}}" class="btn btn-primary btn-lg
-                     btn-bloc" role="button" aria-pressed="true">Editar Productos</a>
+                     btn-bloc" role="button" aria-pressed="true">Lista Productos</a>
 
 
     <div class="ver-producto" style="margin-top:15px;">
@@ -19,23 +21,23 @@
                         <form>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">ID</label>
-                                <input type="text" class="form-control" value="{{$producto->id}}">
+                                <input type="text" class="form-control" value="{{$producto->id}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" value="{{$producto->nombre}}" >
+                                <input type="text" class="form-control" value="{{$producto->nombre}}" readonly >
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-                                <input type="text" class="form-control" value="{{$producto->descripcion}}">
+                                <input type="text" class="form-control" value="{{$producto->descripcion}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio</label>
-                                <input type="text" class="form-control" value="{{$producto->precio}}">
+                                <input type="text" class="form-control" value="{{$producto->precio}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Stock</label>
-                                <input type="text" class="form-control" value="{{$producto->stock}}" >
+                                <input type="text" class="form-control" value="{{$producto->stock}}" readonly >
                             </div>
                         </form>
                     </div>

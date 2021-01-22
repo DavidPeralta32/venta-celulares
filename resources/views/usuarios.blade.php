@@ -3,8 +3,6 @@
 @section('content')
 <div class="container">
     <h1>Lista de usuarios</h1>
-    <a href="{{url('home/')}}" class="btn btn-primary btn-lg
-                     btn-bloc" role="button" aria-pressed="true">Home</a>
     
     <div class="tabla-usuarios">
         @if(Session::has('delete_Good'))

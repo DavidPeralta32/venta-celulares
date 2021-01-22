@@ -102,5 +102,39 @@ class ProductosController extends Controller
         
     }
 
+    public function editarProducto($id){
+        $producto = Productos::find($id);
+            return view('editarProducto', compact('producto'));
+    }
+
+    public function actualizarProducto(Request $req){
+
+        if(isset($req->file)){
+            $imagen = $req->file('file')->store('public/celulares');
+            $url = Storage::url($imagen);
+
+            $producto = Productos::find($req->id);
+
+            $producto->foto = $url;
+            $producto->save();
+        }
+        
+        $producto = Productos::find($req->id);
+
+            $producto->nombre = $req->nombre;
+            $producto->descripcion = $req->descripcion;
+            $producto->precio = $req->precio;
+            $producto->stock = $req->stock;
+
+        $producto->save();
+
+        return back()->with('update_Good','Los datos fueron actualizados correctamente');
+    }
+    public function eliminarProducto($id){
+        $producto = Productos::find($id);
+
+        $producto->delete();
+        return back()->with('delete_Good','El producto fue eliminado correctamente');
+    }
 
 }

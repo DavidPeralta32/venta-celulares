@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <!-- {{ config('app.name', 'Venta-Celulares') }} -->
                     Home
                 </a>
@@ -40,6 +40,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                                
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -54,6 +55,9 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{url('productos/')}}">Productos</a>
+                                </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Usuario</h1>
-    <a href="{{url('usuarios/')}}" class="btn btn-primary btn-lg
+<div class="container" style="font-size:23px;">
+<div class="card">
+  <h2 class="card-header">Usuario: {{$usuarios->name}}</h2>
+  <div class="card-body">
+  <a href="{{url('usuarios/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Usuarios</a>
 
     <div class="formulario-verUsuario">
@@ -26,6 +28,10 @@
             </div>
         </form>
     </div>
+  </div>
+</div>
+
+    
 
 </div>
 @endsection

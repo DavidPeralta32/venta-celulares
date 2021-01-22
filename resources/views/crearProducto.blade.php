@@ -1,16 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Crear producto</h1>
-    <a href="{{url('productos/')}}" class="btn btn-primary btn-lg
-                     btn-bloc" role="button" aria-pressed="true">Productos</a>
-    
-    <a href="{{url('usuarios/')}}" class="btn btn-primary btn-lg
-                     btn-bloc" role="button" aria-pressed="true">Usuarios</a>
-    
-    <a href="{{url('listProducto/')}}" class="btn btn-primary btn-lg
-                     btn-bloc" role="button" aria-pressed="true">Editar Productos</a>
+<div class="container" style="font-size:22px">
+
+<div class="card">
+  <h2 class="card-header">Crear producto</h2>
+  <div class="card-body">
+  <a href="{{url('listProducto/')}}" class="btn btn-primary btn-lg
+                     btn-bloc" role="button" aria-pressed="true">listar Productos</a>
 
     <div class="crear-producto">
         <form action="{{route('insertar.producto')}}" method="post" enctype="multipart/form-data">
@@ -54,9 +51,13 @@
             {{Session::get('insert_Good')}}
             </div>
             @endif
-            <button type="submit" class="btn btn-primary">Crear Producto</button>
+            <button type="submit" class="btn btn-primary" style="font-size:18px">Crear Producto</button>
         </form>
     </div>
+  </div>
+</div>
+
+    
 
 </div>
 @endsection
