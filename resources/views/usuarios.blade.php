@@ -10,6 +10,8 @@
             {{Session::get('delete_Good')}}
             </div>
         @endif 
+        <a href="{{url('administrador/')}}" class="btn btn-primary btn-lg
+                     btn-bloc" role="button" aria-pressed="true">Regresar</a>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>

@@ -4,6 +4,8 @@ use App\Models\Productos;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\usersController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\AdministradorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,18 @@ Route::get('/editUsuario/{id}',[usersController::class,'editUsuario']);
 Route::post('/actualizaUsuario',[usersController::class,'actualizaUsuario'])->name('actualiza');
 //Eliminar usuario
 Route::get('/delUsuario/{id}',[usersController::class,'eliminarUsuario']);
+
+//Administrador
+Route::get('/administrador',[AdministradorController::class,'index']);
+//iniciar sesion admin
+Route::get('/loginAdmin',[AdministradorController::class,'loginAdmin']);
+Route::post('/sesionAdmin',[AdministradorController::class,'sesionAdmin'])->name('sesion.admin');
+
+//comprar producto
+Route::get('/comprarProducto/{id}',[ProductosController::class,'comprarProducto'])->name('comprar.producto');
+
+
+//Mail
+Route::get('/compraformulario/{id}',[MailController::class,'formularioCompra']);
+Route::post('/compraProducto',[MailController::class,'compraProducto'])->name('compra.producto');
+Route::get('/mandarCorreo',[MailController::class,'mandarCorreo']);

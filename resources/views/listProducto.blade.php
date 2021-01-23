@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
     <h1>Lista de productos</h1>
-    
+    <div class="lista-productos" style="margin-top:15px;">
+        <a href="{{url('administrador/')}}" class="btn btn-primary btn-lg
+                     btn-bloc" role="button" aria-pressed="true">Regresar</a>
     <div class="lista-productos" style="margin-top:15px;">
         <a href="{{url('crearProducto/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Crear Producto</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
@@ -135,6 +136,23 @@ class ProductosController extends Controller
 
         $producto->delete();
         return back()->with('delete_Good','El producto fue eliminado correctamente');
+    }
+
+    public function comprarProducto($id){
+        // $productos = Productos::find($id);
+
+        // $stock = $productos->stock;
+
+        // if ($stock == 0) {
+        //     return back()->with('stock_bad','Producto agotado');
+        // }else{
+        //     $stock -= 1;
+        //     $productos->stock = $stock;
+        //     $productos->save();
+
+        //     return back()->with('stock_Good','Producto comprado');
+        // }
+
     }
 
 }
