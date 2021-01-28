@@ -73,28 +73,40 @@ class ProductosController extends Controller
     }
 
     public function insertarProducto(Request $req){
-        //    $validacion = $req->validate([
-        //        'nombre'=> ['required'],
-        //        'descripcion'=>['required'],
-        //        'foto'=>['required','image'],
-        //        'precio'=>['required','numeric'],
-        //        'stock'=>['required','numeric'],
-        //    ]);
+            $validacion = $req->validate([
+                'nombre'=> ['required'],
+                'descripcion'=>['required'],
+                'precio'=>['required','numeric'],
+                'stock'=>['required','numeric'],
+            ]);
+            if(isset($req->file)){
+                $imagen = $req->file('file')->store('public/celulares');
+                $url = Storage::url($imagen);
+    
+                $producto = new Productos;
+                $productos->nombre = $req->nombre;
+                $productos->descripcion = $req->descripcion;
+                $productos->foto = $url;
+                $productos->precio = $req->precio;
+                $productos->stock = $req->stock;
+                $producto->foto = $url;
+                $producto->save();
+                return back()->with('insert_Good','El producto fue agregado correctamente');
+            }else{
+                $productos = new Productos;
 
-        $imagen = $req->file('file')->store('public/celulares');
-        $url = Storage::url($imagen);
+            $productos->nombre = $req->nombre;
+            $productos->descripcion = $req->descripcion;
+            // $productos->foto = $url;
+            $productos->precio = $req->precio;
+            $productos->stock = $req->stock;
+
+            $productos->save();
+
+            return back()->with('insert_Good','El producto fue agregado correctamente');
+            }
         
-         $productos = new Productos;
-
-          $productos->nombre = $req->nombre;
-          $productos->descripcion = $req->descripcion;
-          $productos->foto = $url;
-          $productos->precio = $req->precio;
-          $productos->stock = $req->stock;
-
-          $productos->save();
-
-         return back()->with('insert_Good','El producto fue agregado correctamente');
+         
     }
 
     public function verProducto($id){

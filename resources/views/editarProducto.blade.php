@@ -8,7 +8,7 @@
         <div class="card-body">
         <a href="{{url('listProducto/')}}" class="btn btn-primary btn-lg
                             btn-bloc" role="button" aria-pressed="true">Lista Productos</a>
-
+            <br />
             <div class="edit-producto">
                 <form action="{{route('actualizar.producto')}}" method="post" enctype="multipart/form-data">
                 @csrf

@@ -15,36 +15,26 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
                 <input type="text" name="nombre" class="form-control">
-                @error('nombre')
-                    <small class="text-danger">{{message}}</small>
-                @enderror
+                
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Descripcion</label>
                 <input type="text" name="descripcion" class="form-control">
-                @error('descripcion')
-                    <small class="text-danger">{{message}}</small>
-                @enderror
+               
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Precio</label>
                 <input type="number" name="precio" class="form-control">
-                @error('precio')
-                    <small class="text-danger">{{message}}</small>
-                @enderror
+               
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Stock</label>
                 <input type="text" name="stock" class="form-control">
-                @error('stock')
-                    <small class="text-danger">{{message}}</small>
-                @enderror
+               
             </div>
             <div class="mb-3">
                 <input type="file" name="file" accept="image/*">
-                @error('file')
-                    <small class="text-danger">{{message}}</small>
-                @enderror
+                
             </div>
             @if(Session::has('insert_Good'))
             <div class="alert alert-success" role="alert">

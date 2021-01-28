@@ -2,15 +2,16 @@
 
 @section('content')
 <div class="container">
-    <h1>Lista de productos</h1>
+    <h1 style="text-shadow: 0 0 3px #FF0000;">Lista de productos</h1>
     <div class="lista-productos" style="margin-top:15px;">
         <a href="{{url('administrador/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Regresar</a>
+
     <div class="lista-productos" style="margin-top:15px;">
         <a href="{{url('crearProducto/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Crear Producto</a>
     
-    <div class="lista-producto">
+    <div class="lista-producto" style="padding-top:10px; box-shadow: 10px 10px 5px grey;">
     @if(Session::has('delete_Good'))
             <div class="alert alert-success" role="alert">
             {{Session::get('delete_Good')}}

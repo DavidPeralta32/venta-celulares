@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Lista de usuarios</h1>
+    <h1 style="text-shadow: 0 0 3px #FF0000;">Lista de usuarios</h1>
     
     <div class="tabla-usuarios">
         @if(Session::has('delete_Good'))
@@ -12,7 +12,7 @@
         @endif 
         <a href="{{url('administrador/')}}" class="btn btn-primary btn-lg
                      btn-bloc" role="button" aria-pressed="true">Regresar</a>
-        <table class="table table-dark table-striped">
+        <table class="table table-dark table-striped" style="padding-top:15px;box-shadow: 10px 10px 5px grey;">
             <thead>
                 <tr>
                 <th scope="col">ID</th>
